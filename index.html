@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{MetaDescription}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{title}</title>
+
+
+    <link rel="stylesheet" href="./styles/material.min.css" media="all">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="./styles/main.css" media="all">
+
+    <!-- DEFAULT COLORS 
+    <meta name="color:FooterColor" content="#607D8B" />
+    <meta name="color:PrimaryColor" content="#263238" />
+    <meta name="color:AccentColor" content="#263238" />
+    <meta name="color:Text" content="#000" />
+    -->
+     
+</head>
+<body>
+<div class="main-page mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
+    <main class="mdl-layout__content">  
+        <div class="main-page__posts mdl-grid container">
+          {block:Posts}
+            {block:Text}
+                <div class="text-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                  <a href="{Permalink}">
+                  {block:Title}
+                    <div class="mdl-card__media mdl-color-text--grey-50">
+                      <h3>{Title}</h3>
+                    </div>
+                  {/block:Title}
+                  </a>
+                  <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="avatar">
+                      {block:ShowAvatar}
+                        <img src="{PortraitURL-40}">
+                      {/block:ShowAvatar}
+                    </div>
+                    <div>
+                      <strong>{PostAuthorName}</strong>
+                      <span>{TimeAgo}</span>
+                    </div>
+                    <div class="section-spacer"></div>
+                    <div class="meta__favorites">
+                      {LikeButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                    <div class="meta__reblog">
+                      {ReblogButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                  </div>
+                  <div class="mdl-card__supporting-text mdl-color-text--grey-600 card-container">
+                    <p>
+                        {Body}
+                    </p>
+                  </div>
+                </div>
+            {/block:Text}
+            {block:Quote}
+                <div class="quote-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                  <a href="{Permalink}">
+                    <div class="mdl-card__title mdl-color-text--grey-50">
+                        <h3 class="quote">{Quote}</h3>
+                    </div>
+                  </a>
+                  <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="avatar">
+                      {block:ShowAvatar}
+                        <img src="{PortraitURL-40}">
+                      {/block:ShowAvatar}
+                    </div>
+                    <div>
+                      <strong>{PostAuthorName}</strong>
+                      <span>{TimeAgo}</span>
+                    </div>
+                    <div class="section-spacer"></div>
+                    <div class="meta__favorites">
+                      {LikeButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                    <div class="meta__reblog">
+                      {ReblogButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                  </div>
+                </div>
+            {/block:Quote}
+            {block:Link}
+                <div class="link-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                  <a href="{URL}">
+                    <div class="mdl-card__media mdl-color-text--grey-50">
+                      {block:Thumbnail}
+                      <div class="link-thumbnail">
+                        <img src="{Thumbnail}">
+                      </div>
+                      {/block:Thumbnail}
+                        <h3>{Name}</h3>
+                    </div>
+                  </a>
+                  <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="avatar">
+                      {block:ShowAvatar}
+                        <img src="{PortraitURL-40}">
+                      {/block:ShowAvatar}
+                    </div>
+                    <div>
+                      <strong>{PostAuthorName}</strong>
+                      <span>{TimeAgo}</span>
+                    </div>
+                    <div class="section-spacer"></div>
+                    <div class="meta__favorites">
+                      {LikeButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                    <div class="meta__reblog">
+                      {ReblogButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                  </div>
+                </div>
+            {/block:Link}
+            {block:Photo}
+              <div class="photo-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__media mdl-color-text--grey-50">
+                {block:HighRes} 
+                  <a href="{PhotoURL-HighRes}" target="_blank">
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+                  </a>
+                {/block:HighRes}
+                </div>
+                <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="avatar">
+                      {block:ShowAvatar}
+                        <img src="{PortraitURL-40}">
+                      {/block:ShowAvatar}
+                    </div>
+                    <div>
+                      <strong>{PostAuthorName}</strong>
+                      <span>{TimeAgo}</span>
+                    </div>
+                    <div class="section-spacer"></div>
+                    <div class="meta__favorites">
+                      {LikeButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                    <div class="meta__reblog">
+                      {ReblogButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                </div>
+                  <div class="mdl-card__supporting-text mdl-color-text--grey-600 card-container">
+                  {block:Caption} 
+                    <p>
+                        {Caption}
+                    </p>
+                  {/block:Caption} 
+                  </div>
+              </div>
+            {/block:Photo}
+            {block:Video}
+              <div class="video-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__media mdl-color-text--grey-50">
+                  {Video-700}
+                </div>
+                <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="avatar">
+                      {block:ShowAvatar}
+                        <img src="{PortraitURL-40}">
+                      {/block:ShowAvatar}
+                    </div>
+                    <div>
+                      <strong>{PostAuthorName}</strong>
+                      <span>{TimeAgo}</span>
+                    </div>
+                    <div class="section-spacer"></div>
+                    <div class="meta__favorites">
+                      {LikeButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                    <div class="meta__reblog">
+                      {ReblogButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                  </div>
+                  <div class="mdl-card__supporting-text mdl-color-text--grey-600 card-container">
+                  {block:Caption} 
+                    <p>
+                        {Caption}
+                    </p>
+                  {/block:Caption} 
+                  </div>
+              </div>
+            {/block:Video}
+            {block:Audio}
+              <div class="audio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__media mdl-color-text--grey-50">
+                  {block:AudioEmbed} 
+                    {AudioEmbed-250}
+                  {/block:AudioEmbed}
+                </div>
+                <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="avatar">
+                      {block:ShowAvatar}
+                        <img src="{PortraitURL-40}">
+                      {/block:ShowAvatar}
+                    </div>
+                    <div>
+                      <strong>{PostAuthorName}</strong>
+                      <span>{TimeAgo}</span>
+                    </div>
+                    <div class="section-spacer"></div>
+                    <div class="meta__favorites">
+                      {LikeButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                    <div class="meta__reblog">
+                      {ReblogButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                  </div>
+                  <div class="mdl-card__supporting-text mdl-color-text--grey-600 card-container">
+                  {block:Caption} 
+                    <p>
+                        {Caption}
+                    </p>
+                  {/block:Caption} 
+                  </div>
+              </div>
+            {/block:Audio}
+            {block:Photoset}
+              <div class="photoset-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                {block:Photos}
+                <div class="mdl-card__media mdl-color-text--grey-50">
+                  <img src="{PhotoURL-500}"/>
+                </div>
+                {/block:Photos}
+                <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="avatar">
+                      {block:ShowAvatar}
+                        <img src="{PortraitURL-40}">
+                      {/block:ShowAvatar}
+                    </div>
+                    <div>
+                      <strong>{PostAuthorName}</strong>
+                      <span>{TimeAgo}</span>
+                    </div>
+                    <div class="section-spacer"></div>
+                    <div class="meta__favorites">
+                      {LikeButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                    <div class="meta__reblog">
+                      {ReblogButton}
+                      <span class="visuallyhidden">favorites</span>
+                    </div>
+                  </div>
+              </div>
+            {/block:Photoset}
+          {/block:Posts}
+          {block:Pagination}
+            <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+              {block:PreviousPage}
+              <a href="{PreviousPage}" class="demo-nav__button">
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                  <i class="material-icons">arrow_back</i>
+                </button>
+                Newer
+              </a>
+              {/block:PreviousPage}
+              <div class="section-spacer"></div>
+              {block:NextPage}
+              <a href="{NextPage}" class="demo-nav__button">
+                Older
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                  <i class="material-icons">arrow_forward</i>
+                </button>
+              </a>
+              {/block:NextPage}
+            </nav>
+          {/block:Pagination}
+          {block:PermalinkPagination}
+            <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+              {block:NextPost}
+              <a href="{NextPost}" class="demo-nav__button">
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                  <i class="material-icons">arrow_back</i>
+                </button> 
+                Next
+              </a>
+              {/block:NextPost}
+              <div class="section-spacer"></div>
+              {block:PreviousPost}
+              <a href="{PreviousPost}" class="demo-nav__button">
+                Previous
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                  <i class="material-icons">arrow_forward</i>
+                </button>
+              </a>
+              {/block:PreviousPost}
+            </nav>
+          {/block:PermalinkPagination}
+        </div>
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer--left-section">
+          <a href="https://twitter.com/carlsimcity" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter"></button>
+          </a>
+          <!--<button class="mdl-mini-footer--social-btn social-btn social-btn__blogger"></button>-->
+          <a href="https://plus.google.com/+CarlSim/posts" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus"></button>
+          </a>
+        </div>
+        <div class="mdl-mini-footer--right-section">
+          &copy; {CopyrightYears} Carl Sim
+        </div>
+      </footer>
+    </main>
+</div>
+<!-- build:js scripts/combined.js -->
+    <script>
+      console.log("query loaded!");
+      $(document).ready(function(){$("body").hide().fadeIn(1000);});
+    </script>
+    <script type="text/javascript" src="./scripts/material.js"></script>
+<!-- endbuild -->
+</body>
+</html>
